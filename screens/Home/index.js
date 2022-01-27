@@ -9,7 +9,7 @@ import {
 import React from "react";
 import Logo from "../../components/Logo";
 import Screen from "../../components/Screen";
-import Tesla from "../../constants/Tesla";
+
 const Home = ({navigation}) => {
   return (
     <Screen style={{backgroundColor: "#000"}}>
@@ -98,12 +98,12 @@ const styles = StyleSheet.create({
   },
   TouchableOpacitys: {
     borderColor: "#C62A2E",
-    padding: 9,
+    padding: 15,
     margin: 10,
     width: "65%",
     alignItems: "center",
-    borderWidth: 1,
-    borderRadius: 25,
+    borderWidth: 2,
+    borderRadius: 30,
     backgroundColor: "transparent",
     bottom:-20
   },

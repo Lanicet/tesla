@@ -5,6 +5,7 @@ import AppLoading from 'expo-app-loading';
 import { NavigationContainer } from '@react-navigation/native';
 import { navigationRef } from './navigation/rootNavigation';
 import AppNavigator from './navigation/AppNavigator';
+import {useFonts} from 'expo-font';
  const  App = ()=> {
  
   const [isReady, setisReady] =useState(false)
@@ -16,8 +17,16 @@ import AppNavigator from './navigation/AppNavigator';
     }); 
     return Promise.all(cacheImages);
   }
-
-    if (!isReady) {
+  const [fontsLoaded] = useFonts({
+    'Gotham-Medium': require('./assets/fonts/Gotham-Medium.ttf'),
+    'Gotham-Bold': require('./assets/fonts/Gotham-Bold.otf'),
+    'Gotham-Black': require('./assets/fonts/Gotham-Black.otf'),
+    'Gotham-Light': require('./assets/fonts/Gotham-Light.otf'),
+    'Gotham-Thin': require('./assets/fonts/Gotham-Thin.otf'),
+    'Gotham-Rounded-Book': require('./assets/fonts/Gotham-Rounded-Book.otf'),
+    
+  });
+    if (!isReady && !fontsLoaded) {
       return (
         <AppLoading
           startAsync={_cacheResourcesAsync}
